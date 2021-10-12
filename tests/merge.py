@@ -5,7 +5,7 @@ import numpy as np
 
 cv2.ocl.setUseOpenCL(False)
 
-img_dir = "img_merge_test"  # 原始文件目录
+img_dir = "img_merge_test_easy"  # 原始文件目录
 names = os.listdir(img_dir)
 
 
