@@ -4,8 +4,9 @@ import os
 cv2.ocl.setUseOpenCL(False)
 
 img_dir = "img_merge_test"
+# img_dir = "frame_test"
 output = "result.jpg"
-conf_path = "img_merge_test/files.conf"
+conf_path = "{}/files.conf".format(img_dir)
 
 fp = open(conf_path, "r")
 filenames = [each.rstrip("\r\n") for each in fp.readlines()]
