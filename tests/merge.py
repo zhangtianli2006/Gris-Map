@@ -20,3 +20,5 @@ stitcher = cv2.Stitcher_create()
 status, res = stitcher.stitch(images)
 
 cv2.imwrite(os.path.join(img_dir, output), res)
+
+# https://blog.csdn.net/yy2yy99/article/details/103034651
