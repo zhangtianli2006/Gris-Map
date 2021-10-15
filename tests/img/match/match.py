@@ -2,6 +2,9 @@ import numpy as np
 import math
 import cv2
 
+def dis(p1, p2):
+    return ((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2) ** 0.5
+
 img1 = cv2.imread("1.png", 0)
 img2 = cv2.imread("2.png", 0)
 
@@ -41,6 +44,8 @@ draw_params = dict(
     flags=2,
 )  # draw only inliers
 
+for i in range(len(good)):
+    print(dis(kp1[good[i].queryIdx].pt, kp2[good[i].trainIdx].pt))
 vis = cv2.drawMatches(img1, kp1, img2, kp2, good, None, **draw_params)
 
 cv2.imwrite("resault.jpg", vis)
