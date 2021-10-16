@@ -45,7 +45,8 @@ draw_params = dict(
 )  # draw only inliers
 
 for i in range(len(good)):
-    print(dis(kp1[good[i].queryIdx].pt, kp2[good[i].trainIdx].pt))
+    # print(dis(kp1[good[i].queryIdx].pt, kp2[good[i].trainIdx].pt))
+    print(kp1[good[i].queryIdx].pt[0] - kp2[good[i].trainIdx].pt[0], kp1[good[i].queryIdx].pt[1] - kp2[good[i].trainIdx].pt[1])
 vis = cv2.drawMatches(img1, kp1, img2, kp2, good, None, **draw_params)
 
 cv2.imwrite("resault.jpg", vis)
